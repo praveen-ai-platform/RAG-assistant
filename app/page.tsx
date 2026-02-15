@@ -150,7 +150,7 @@ export default function Home() {
                 {messages.map((msg) => (
                   <div
                     key={msg.id}
-                    className={`max-w-[96%] rounded-xl border px-3 py-2.5 text-sm leading-6 whitespace-pre-wrap sm:max-w-[85%] sm:px-4 sm:py-3 ${
+                    className={`max-w-[96%] rounded-xl border px-3 py-2.5 text-sm leading-6 whitespace-pre-wrap break-words [overflow-wrap:anywhere] sm:max-w-[85%] sm:px-4 sm:py-3 ${
                       msg.role === "user"
                         ? "ml-auto border-cyan-500/40 bg-cyan-500/15 text-cyan-50"
                         : "border-slate-700 bg-slate-950/90 text-slate-100"
