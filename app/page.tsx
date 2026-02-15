@@ -74,23 +74,23 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+    <main className="relative min-h-[100dvh] overflow-hidden bg-slate-950 text-slate-100">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(34,211,238,0.18),transparent_38%),radial-gradient(circle_at_86%_14%,rgba(56,189,248,0.12),transparent_36%),linear-gradient(180deg,#020617,#020617_50%,#0b1222)]" />
 
-      <div className="relative mx-auto flex h-screen w-full max-w-[1440px] flex-col px-4 py-4 sm:px-6 lg:px-8">
-        <header className="mb-4 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-5 py-4 shadow-[0_8px_32px_rgba(2,6,23,0.48)] backdrop-blur-sm sm:px-6">
+      <div className="relative mx-auto flex min-h-[100dvh] w-full max-w-[1440px] flex-col px-3 py-3 sm:px-5 sm:py-4 lg:px-8">
+        <header className="mb-3 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-4 py-3 shadow-[0_8px_32px_rgba(2,6,23,0.48)] backdrop-blur-sm sm:mb-4 sm:px-5 sm:py-4 lg:px-6">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-4">
               <img
                 src="/bot.png"
                 alt="IntelliOps Bot"
-                className="h-16 w-16 rounded-full border border-cyan-400/50 bg-slate-950 p-1 shadow-[0_0_24px_rgba(34,211,238,0.3)]"
+                className="h-14 w-14 rounded-full border border-cyan-400/50 bg-slate-950 p-1 shadow-[0_0_24px_rgba(34,211,238,0.3)] sm:h-16 sm:w-16"
               />
               <div>
-                <h1 className="text-lg font-semibold tracking-tight text-cyan-300 sm:text-xl">
+                <h1 className="text-base font-semibold tracking-tight text-cyan-300 sm:text-lg lg:text-xl">
                   IntelliOps Assistant
                 </h1>
-                <p className="mt-1 text-sm text-slate-300">
+                <p className="mt-1 text-xs text-slate-300 sm:text-sm">
                   Incident triage workspace with deployment-aware AI responses.
                 </p>
               </div>
@@ -98,8 +98,8 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="grid min-h-0 flex-1 gap-4 overflow-hidden lg:grid-cols-12">
-          <aside className="space-y-4 lg:col-span-4">
+        <section className="grid min-h-0 flex-1 gap-3 overflow-hidden md:grid-cols-12 md:gap-4">
+          <aside className="hidden space-y-4 md:col-span-4 md:block">
             <div className="rounded-2xl border border-slate-800/90 bg-slate-900/70 p-5 shadow-[0_10px_30px_rgba(2,6,23,0.4)]">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
                 Session Guide
@@ -134,7 +134,7 @@ export default function Home() {
             </div>
           </aside>
 
-          <div className="min-h-0 lg:col-span-8">
+          <div className="min-h-0 md:col-span-8">
             <section className="flex h-full min-h-0 flex-col rounded-2xl border border-slate-800/90 bg-slate-900/70 shadow-[0_14px_40px_rgba(2,6,23,0.5)] backdrop-blur-sm">
               <div className="border-b border-slate-800/90 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400 sm:px-6">
                 Chat
@@ -150,7 +150,7 @@ export default function Home() {
                 {messages.map((msg) => (
                   <div
                     key={msg.id}
-                    className={`max-w-[92%] rounded-xl border px-4 py-3 text-sm leading-6 whitespace-pre-wrap sm:max-w-[85%] ${
+                    className={`max-w-[96%] rounded-xl border px-3 py-2.5 text-sm leading-6 whitespace-pre-wrap sm:max-w-[85%] sm:px-4 sm:py-3 ${
                       msg.role === "user"
                         ? "ml-auto border-cyan-500/40 bg-cyan-500/15 text-cyan-50"
                         : "border-slate-700 bg-slate-950/90 text-slate-100"
@@ -171,10 +171,10 @@ export default function Home() {
 
               <form
                 onSubmit={handleSubmit}
-                className="flex items-center gap-3 border-t border-slate-800/90 bg-slate-900/80 p-4 sm:p-5"
+                className="flex items-center gap-2 border-t border-slate-800/90 bg-slate-900/80 p-3 sm:gap-3 sm:p-4"
               >
                 <input
-                  className="h-11 flex-1 rounded-lg border border-slate-700 bg-slate-950 px-4 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/70 focus:outline-none"
+                  className="h-10 flex-1 rounded-lg border border-slate-700 bg-slate-950 px-3 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-400/70 focus:outline-none sm:h-11 sm:px-4"
                   placeholder="Describe your issue..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
@@ -183,7 +183,7 @@ export default function Home() {
                   type="submit"
                   disabled={loading || !query.trim()}
                   aria-label={loading ? "Sending message" : "Send message"}
-                  className="flex h-11 w-11 items-center justify-center rounded-lg bg-cyan-500 text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-400"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500 text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-400 sm:h-11 sm:w-11"
                 >
                   {loading ? (
                     <span className="text-lg leading-none">...</span>
