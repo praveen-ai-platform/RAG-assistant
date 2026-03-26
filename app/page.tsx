@@ -8,6 +8,9 @@ type ChatMessage = {
   text: string;
 };
 
+const EXAMPLE_PROMPT =
+  "API timeout issue. Provide the incident and recent deployment history along with tracking numbers and provide your recommendation.";
+
 const BOT_URL =
   "https://b75v7st3u1.execute-api.us-east-1.amazonaws.com/prod/praveen-aiops-bot?q=";
 
@@ -152,8 +155,17 @@ export default function Home() {
 
               <div className="flex-1 space-y-4 overflow-y-auto px-4 py-5 sm:px-6">
                 {messages.length === 0 && (
-                  <div className="rounded-xl border border-dashed border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-400">
-                    Describe the issue to start. The assistant will stream a detailed response.
+                  <div className="rounded-xl border border-dashed border-slate-700 bg-slate-900/60 p-4">
+                    <p className="text-sm text-slate-400">
+                      Describe the issue to start. The assistant will stream a detailed response.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setQuery(EXAMPLE_PROMPT)}
+                      className="mt-4 w-full rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-4 py-3 text-left text-sm text-cyan-100 transition hover:border-cyan-400/50 hover:bg-cyan-500/15"
+                    >
+                      {EXAMPLE_PROMPT}
+                    </button>
                   </div>
                 )}
 
