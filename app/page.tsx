@@ -121,6 +121,16 @@ export default function Home() {
               </p>
             </div>
 
+            <div className="rounded-2xl border border-amber-400/25 bg-amber-500/10 p-5 shadow-[0_10px_30px_rgba(2,6,23,0.4)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-200">
+                Prototype Notice
+              </p>
+              <p className="mt-3 text-sm text-amber-50/90">
+                Prototype only. Responses are generated from test RAG data and are
+                intended for evaluation and demonstration purposes.
+              </p>
+            </div>
+
             <div className="rounded-2xl border border-slate-800/90 bg-slate-900/70 p-5 shadow-[0_10px_30px_rgba(2,6,23,0.4)]">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
                 Response Mode
