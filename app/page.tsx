@@ -9,7 +9,7 @@ type ChatMessage = {
 };
 
 const EXAMPLE_PROMPT =
-  "API timeout issue. Provide the incident and recent deployment history along with tracking numbers and provide your recommendation.";
+  "API timeout issue. Provide the incident and recent deployment history along with tracking numbers and provide your recommendation based on available information.";
 
 const BOT_URL =
   "https://b75v7st3u1.execute-api.us-east-1.amazonaws.com/prod/praveen-aiops-bot?q=";
@@ -159,10 +159,13 @@ export default function Home() {
                     <p className="text-sm text-slate-400">
                       Describe the issue to start. The assistant will stream a detailed response.
                     </p>
+                    <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-300">
+                      Example prompt:
+                    </p>
                     <button
                       type="button"
                       onClick={() => setQuery(EXAMPLE_PROMPT)}
-                      className="mt-4 w-full rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-4 py-3 text-left text-sm text-cyan-100 transition hover:border-cyan-400/50 hover:bg-cyan-500/15"
+                      className="mt-2 w-full rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-4 py-3 text-left text-sm text-cyan-100 transition hover:border-cyan-400/50 hover:bg-cyan-500/15"
                     >
                       {EXAMPLE_PROMPT}
                     </button>
