@@ -9,7 +9,7 @@ type ChatMessage = {
 };
 
 const EXAMPLE_PROMPT =
-  "API timeout issue. Provide the incident and recent deployment history along with tracking numbers and provide your recommendation based on available information.";
+  "API timeout issue. Provide the incident and recent deployment history along with tracking numbers. Provide your recommendation based on available information.";
 
 const BOT_URL =
   "https://b75v7st3u1.execute-api.us-east-1.amazonaws.com/prod/praveen-aiops-bot?q=";
